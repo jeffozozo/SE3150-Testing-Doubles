@@ -42,7 +42,7 @@ Example response object:
 Returns an array of squirrel objects.
 
 ```bash
-curl -s -X GET http://127.0.0.1:8080/squirrels
+curl -X GET http://127.0.0.1:8080/squirrels
 ```
 
 ### Retrieve
@@ -50,7 +50,7 @@ curl -s -X GET http://127.0.0.1:8080/squirrels
 Returns a single squirrel by id, or **404** if not found.
 
 ```bash
-curl -s -X GET http://127.0.0.1:8080/squirrels/1
+curl -X GET http://127.0.0.1:8080/squirrels/1
 ```
 
 ### Create
@@ -59,7 +59,7 @@ Body must be URL-encoded form data containing `name` and `size`.
 Returns the created object (or confirmation).
 
 ```bash
-curl -s -X POST http://127.0.0.1:8080/squirrels   -d "name=Fluffy&size=large"
+curl -X POST http://127.0.0.1:8080/squirrels   -d "name=Fluffy&size=large"
 ```
 
 ### Replace (full update)
@@ -68,7 +68,7 @@ Body must be URL-encoded form data containing `name` and `size`.
 Returns the updated object, or **404** if the id is missing.
 
 ```bash
-curl -s -X PUT http://127.0.0.1:8080/squirrels/1   -d "name=Fluffy&size=small"
+curl -X PUT http://127.0.0.1:8080/squirrels/1   -d "name=Fluffy&size=small"
 ```
 
 ### Delete
@@ -76,15 +76,13 @@ curl -s -X PUT http://127.0.0.1:8080/squirrels/1   -d "name=Fluffy&size=small"
 Deletes the squirrel. Returns 200 on success or **404** if not found.
 
 ```bash
-curl -s -X DELETE http://127.0.0.1:8080/squirrels/1
+curl -X DELETE http://127.0.0.1:8080/squirrels/1
 ```
 
 ---
 
 ## Status Codes
 - **200 OK** – Success.
-- **201 Created** – On successful `POST` (if implemented).
-- **400 Bad Request** – Malformed request.
 - **404 Not Found** – Unknown path or missing id.
 - **405 Method Not Allowed** – Unsupported method on a resource.
 - **500 Internal Server Error** – Unexpected errors.
