@@ -77,7 +77,7 @@ curl -s -X DELETE http://127.0.0.1:8080/squirrels/1
 
 ## Status Codes
 - **200 OK** – Success.
-- **201 Created** – On successful `POST` (if implemented).
+- **201 Created** – On successful `POST`.
 - **400 Bad Request** – Malformed JSON/body.
 - **404 Not Found** – Unknown path or missing id.
 - **405 Method Not Allowed** – Unsupported method on a resource.
